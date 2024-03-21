@@ -36,7 +36,7 @@ def process_images_from_url(url):
 
     for item in soup.find_all('img'):
         if len(item['src']) > 4:
-            print("maiu")
+            print("Confirmed")
             download_image(item['src'], domain)
             images_downloaded += 1
         else:
