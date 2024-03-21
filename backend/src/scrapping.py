@@ -19,7 +19,7 @@ def download_image(image_url, domain):
     # Descarga la imagen especificada por su URL.
     # Si la URL es relativa, la convierte en absoluta usando el dominio proporcionado.
     
-    directory = "../data"
+    directory = "data"
     if image_url[:4] != 'http':
         image_url = f'https://{domain}{image_url}'
     filename = os.path.join(directory, image_url.split("/")[-1])
@@ -36,6 +36,7 @@ def process_images_from_url(url):
 
     for item in soup.find_all('img'):
         if len(item['src']) > 4:
+            print("maiu")
             download_image(item['src'], domain)
             images_downloaded += 1
         else:
